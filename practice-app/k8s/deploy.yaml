@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Depoloyment
+metadata:
+  name: p-deployment
+  labels:
+    app: p-deployment
+spec:
+  replicas: 3
+  selector: 
+    matchLabels: p-deployment
+  template:
+    metadata:
+      labels: p-pod
+    spec:
+      containers:
+        - name: p-pod
+          image: yeswanthteja/practice-repo
+          ports:
+            containerPort: 8080
+          
+  
