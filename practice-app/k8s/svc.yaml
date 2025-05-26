@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: service
+metadata:
+  name: p-deployment-service
+spec:
+  selector:
+    app: p-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+    type: ClusterIP
+      
