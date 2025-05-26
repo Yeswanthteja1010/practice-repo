@@ -1,21 +1,33 @@
-pipeline{
-  agent any
-  stages{
-    stage('clone the repo'){
-      checkout scm
-      echo 'clone the repo'
-    }
+pipeline {
+    agent any
 
-    stage('build the project'){
-      echo 'clone the repo'
-    }
+    stages {
+        stage('Clone the Repo') {
+            steps {
+                echo 'Cloning the repository...'
+                checkout scm
+            }
+        }
 
-    stage('docker'){
-      echo 'docker develop'
-    }
+        stage('Build the Project') {
+            steps {
+                echo 'Building the project...'
+                // Add your actual build steps here (e.g., npm build, mvn install, etc.)
+            }
+        }
 
-    stage('kubernetes'){
-      echo 'kubernetes develop'
+        stage('Docker') {
+            steps {
+                echo 'Building and pushing Docker image on develop branch...'
+                // Add your Docker commands here
+            }
+        }
+
+        stage('Kubernetes') {
+            steps {
+                echo 'Deploying to Kubernetes on develop branch...'
+                // Add your kubectl or Helm commands here
+            }
+        }
     }
-  }
 }
