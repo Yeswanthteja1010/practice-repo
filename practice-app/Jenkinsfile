@@ -1,0 +1,21 @@
+pipeline{
+  agent any
+  stages{
+    stage('clone the repo'){
+      checkout scm
+      echo 'clone the repo'
+    }
+
+    stage('build the project'){
+      echo 'clone the repo'
+    }
+
+    stage('docker'){
+      echo 'docker feature'
+    }
+
+    stage('kubernetes'){
+      echo 'kubernetes feature'
+    }
+  }
+}
