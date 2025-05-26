@@ -13,7 +13,7 @@ spec:
       labels: p-pod
     spec:
       containers:
-        - name: p-pod
+        - name: p-deplyment
           image: yeswanthteja/practice-repo
           ports:
             containerPort: 8080
