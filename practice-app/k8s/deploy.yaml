@@ -7,15 +7,17 @@ metadata:
 spec:
   replicas: 3
   selector: 
-    matchLabels: p-deployment
+    matchLabels:
+      app: p-deployment
   template:
     metadata:
-      labels: p-pod
+      labels: 
+        app: p-deployment
     spec:
       containers:
         - name: p-deplyment
           image: yeswanthteja/practice-repo
           ports:
-            containerPort: 8080
+            - containerPort: 8080
           
   
